@@ -2,6 +2,9 @@
 
 #include <cstdlib>
 #include <cstdio>
+#include <algorithm>
+#include <numeric>
+
 #include "portaudio.h"
 
 #pragma comment(lib, "portaudio")
@@ -220,6 +223,12 @@ public:
 		if (errorStatus != PaErrorCode::paNoError) return;
 #ifdef DEBUG
 		printf("%s: Recorded %d frames in %ds\n", __FUNCTION__, totalTicks, totalSeconds);
+		
+		float min = *std::min_element(data.recordedSamples, data.recordedSamples + data.frameIndex);
+		float max = *std::max_element(data.recordedSamples, data.recordedSamples + data.frameIndex);
+		float average = std::accumulate(data.recordedSamples, data.recordedSamples + data.frameIndex, 0.f) / data.frameIndex;
+
+		printf("min: %f\tmax: %f\tavg: %f\n", min, max, average);
 #endif
 	}
 

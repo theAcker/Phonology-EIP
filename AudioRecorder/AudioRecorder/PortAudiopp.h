@@ -11,11 +11,11 @@
 
 #define DEBUG
 
-#define SAMPLE_RATE			44100
+#define SAMPLE_RATE		44100
 #define FRAMES_PER_BUFFER	512
 #define TOTAL_SECONDS		3
 #define NUM_CHANNELS		2
-#define DITHER_FLAG			0
+#define DITHER_FLAG		0
 #define PA_SAMPLE_TYPE		paFloat32
 #define SAMPLE_SILENCE		0.0f
 

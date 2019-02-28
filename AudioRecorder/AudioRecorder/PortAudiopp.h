@@ -11,7 +11,7 @@
 
 #define DEBUG
 
-#define SAMPLE_RATE		44100
+#define SAMPLE_RATE		96000
 #define FRAMES_PER_BUFFER	512
 #define TOTAL_SECONDS		3
 #define NUM_CHANNELS		2
